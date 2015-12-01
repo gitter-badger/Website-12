@@ -11,18 +11,7 @@ path = os.path.dirname(os.path.abspath(__file__))
 
 @app.route('/') 
 def root():
-    return """
-<!doctype html>
-<html>
-    <head>
-        <title>FSM Belgium</title>
-    </head>
-    <body style="margin:0;">
-        <img style="width:100%;" src="data/fsm.jpg">
-    </body>
-    <div></div>
-</html>
-"""
+    return open("index.html").read()
 
 @app.route('/data/<path:path>')
 def send_js(path):
